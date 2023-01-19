@@ -9,6 +9,7 @@ defmodule Madliaison.Router do
   end
 
   get "/.well-known/webfinger", to: Madliaison.Webfinger
+  get "/.well-known/nodeinfo", to: Madliaison.NodeinfoWellknown
 
   match _ do
     send_resp(conn, 404, "Oops!")
