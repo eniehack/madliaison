@@ -12,6 +12,7 @@ defmodule Madliaison.Router do
   get "/.well-known/nodeinfo", to: Madliaison.NodeinfoWellknown
   get "/nodeinfo/2.0", to: Madliaison.Nodeinfo
   get "/actor", to: Madliaison.Actor.Get
+  get "/actor/following", to: Madliaison.Actor.Following
 
   match _ do
     send_resp(conn, 404, "Oops!")
